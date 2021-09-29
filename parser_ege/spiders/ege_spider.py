@@ -25,5 +25,5 @@ class CatalogSpider(scrapy.Spider):
             'title': response.css('div.new_header b').extract_first('').strip().replace('</b>','').replace('<b>','').replace('<!--np-->',''),
         }
 
-        if str(item)[-19:-2] == str(name_teacher):
+        if str(item)[((len(name_teacher)*-1)-2):-2] == str(name_teacher):
             yield item
